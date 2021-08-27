@@ -8,25 +8,14 @@ public class Exer03 {
 
 		Scanner entrada = new Scanner(System.in);
 
-		System.out.printf("Nome: ");
-		String nome = entrada.nextLine();
+		boolean estadoCivil = true;
+		String nome, estado;
 
-//		
-//		System.out.printf("Idade: ");
-//		int idade = entrada.nextInt();
-//		
-//		System.out.printf("Idade: ");
-//		int salario = entrada.nextInt();
-//		
-//
-//		System.out.printf("Sexo: ");
-//		String sexo = entrada.nextLine();
-//		
-//		System.out.printf("Estado Civeil: ");
-//		String estadp = entrada.nextLine();
+		System.out.printf("Nome: ");
+		nome = entrada.nextLine();
 
 		while (nome.length() < 3) {
-			System.out.printf("Nome inv·lido, Digite novamente!!: ");
+			System.out.printf("Nome invalido, Digite novamente!!: ");
 			nome = entrada.nextLine();
 		}
 		System.out.println("Nome digitado corretamente: " + nome);
@@ -35,11 +24,39 @@ public class Exer03 {
 		int idade = entrada.nextInt();
 
 		while (idade < 0 || idade > 150) {
-			System.out.printf("Idade inv·lida, Digite novamente: ");
+			System.out.printf("Idade inv√°lida, Digite novamente: ");
 			idade = entrada.nextInt();
 		}
-		System.out.println("iIdade Digitada correta " + idade);
+		System.out.println("Idade Digitada correta " + idade);
+
+		System.out.printf("Salario: ");
+		double salario = entrada.nextDouble();
+
+		while (salario <= 0) {
+			System.out.printf("Sal√°rio precisa ser mais que R$ 0");
+			salario = entrada.nextDouble();
+		}
+		System.out.println("Salario Digitado Corretamente");
+
+		do {
+
+			System.out.printf("Estado Civil ");
+			estado = entrada.next();
+
+			if (estado.equalsIgnoreCase("s") || estado.equalsIgnoreCase("c")) {
+				estadoCivil = true;
+
+			} else {
+
+				System.out.println("Estado civil incorreto, Digite novamente");
+
+			}
+
+		} while (!estadoCivil);
+
+		System.out.println("Correto");
 
 	}
+	
 
 }
