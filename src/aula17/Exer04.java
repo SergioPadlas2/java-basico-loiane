@@ -4,17 +4,26 @@ public class Exer04 {
 
 	public static void main(String[] args) {
 
-		int pobB = 20000;
 		
+		double popA = 80000;
+		double popB = 200000;
+		int cont = 0;
+
 		
-		
-		for(int popA=80000; popA < pobB; popA++){
-			
-			double valorA = popA * (int) 0.02;
-			
-			System.out.println(popA);
-			
+		while(popA < popB){
+			popA += (popA/100)*3;
+			popB += (popB/100)*0.15;
+			cont ++;
 		}
+		
+		
+		System.out.println("População A " + popA);
+		System.out.println("População B " + popB);
+
+
+		
+		System.out.println(cont);
+		
 		
 		
 	}
